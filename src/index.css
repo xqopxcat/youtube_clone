@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .search-bar {
+        @apply border-none outline-0 w-[350px]
+    }
+    .video-player {
+        @apply !h-[77vh] !w-full
+    }
+    .category-btn {
+        @apply font-bold
+        capitalize
+        flex
+        items-center
+        justify-start
+        cursor-pointer
+        bg-transparent
+        outline-0
+        border-none
+        py-2
+        px-4
+        my-2
+        rounded-3xl
+        transition ease-linear duration-300;
+        &:hover {
+            @apply bg-[#FC1503] text-white;
+            span {
+                @apply text-white opacity-100
+            }
+        }
+    }
+}
+
+.card {
+    @apply bg-white 
+    text-white opacity-90 
+    transition-shadow duration-300
+    /* rounded
+    shadow-md */
+    overflow-hidden
+    shadow-none 
+    rounded-none;
+    .card-media {
+        @apply block
+        bg-cover
+        bg-no-repeat
+        bg-center
+        w-full
+        object-cover
+    }
+}
+
+.card.channel {
+    @apply bg-transparent;
+    a {
+        @apply bg-transparent
+        flex 
+        flex-col
+        items-center
+        justify-center
+    }
+    .card-media {
+        @apply rounded-[50%]
+        w-[180px]
+    }
+}
+
+.card .card-content {
+    @apply px-4 bg-[#1e1e1e] h-28 pt-2;
+    .title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    &:last-child {
+        @apply pb-5;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .category-btn {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .copyright {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .search-bar{
+      width:200px;
+    }
+    .video-player {
+        @apply !h-[45vh]
+    }
+}
